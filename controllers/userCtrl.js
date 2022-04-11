@@ -12,7 +12,6 @@ const handleErrors = (e, res) => {
         res.status(409).send('User already exists');
     else if (hasErrors(e))
         res.status(400).json(e.errors);
-        console.log(e.errrors);
     else
         res.status(500).send(e);
 }
@@ -27,6 +26,7 @@ const register = async (req, res) => {
         res.send();
     } catch (e) {
         handleErrors(e, res);
+        console.log(e);
     }
 };
 
